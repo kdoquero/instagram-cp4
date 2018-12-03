@@ -9,7 +9,9 @@
     "mysql-start": "sudo docker-compose up",
     "mysql-stop": "sudo docker-compose down",
     "mysql-connect": "sudo docker-compose exec db mysql -u admin -p",
-    "bash": "sudo docker-compose exec db bash"
+    "bash": "sudo docker-compose exec db bash",
+    "migrate":"sequelize db:migrate",
+    "migrate:undo":"sequelize db:migrate:undo:all"
   },
   "author": "",
   "license": "ISC",
