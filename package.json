@@ -10,14 +10,19 @@
     "mysql-stop": "sudo docker-compose down",
     "mysql-connect": "sudo docker-compose exec db mysql -u admin -p",
     "bash": "sudo docker-compose exec db bash",
-    "migrate":"sequelize db:migrate",
-    "migrate:undo":"sequelize db:migrate:undo:all"
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo:all",
+    "seed": "sequelize db:seed:all",
+    "seed:undo": "sequelize db:seed:undo:all",
+    "backup":"sudo docker-compose exec db bash  -c 'mysqldump --user admin -p instagram_development > /home/dumps/backup.$(date +%Y%m%d_%H%M%S).sql'"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "express": "^4.16.4",
     "mysql2": "^1.6.4",
+    "random-sentence": "^1.0.4",
     "sequelize": "^4.41.2"
   }
 }
